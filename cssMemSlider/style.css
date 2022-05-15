@@ -1,0 +1,127 @@
+
+:root {
+  --image-width: 500px;
+  --image-height: 500px;
+  --controls-size: 30px;
+}
+.html, body {
+  background-color: #242424;
+}
+.slider-wrapper {
+  display: flex;
+  position: relative;
+  width: calc(var(--image-width) + 40px);
+  height: calc(var(--image-height) + 100px);
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #242424;
+  
+}
+.radio {
+  display: none;
+  z-index: 2;
+}
+.controls {
+  display: flex;
+  position: absolute;
+  top: calc( var(--image-width) + 10px);
+  right: 0%;
+  z-index: 2;
+}
+input.radio:nth-child(n):checked ~ .slider {
+  left: 0;
+}
+input.radio:nth-child(2):checked ~ .slider {
+  left: -540px;
+}
+input.radio:nth-child(3):checked  ~ .slider {
+  left: -1080px;
+}
+input.radio:nth-child(4):checked  ~ .slider {
+  left: -1620px;
+}
+/*.slider .mem-card:nth-child(1)>img {
+  background-color: red;
+}
+.slider .mem-card:nth-child(2)>img {
+  background-color: blue;
+}
+.slider .mem-card:nth-child(3)>img {
+  background-color: white;
+}
+.slider .mem-card:nth-child(4)>img {
+  background-color: black;
+}*/
+.controls-radio {
+  width: var(--controls-size);
+  height: var(--controls-size);
+  background-image: url("./assets/img/no-checked.svg");
+  margin: 0 10px;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.controls-radio:hover {
+  background-image: url("./assets/img/no-checked-hover.svg");
+}
+.radio:nth-child(1):checked ~ .controls > .controls-radio:nth-child(1),
+.radio:nth-child(2):checked ~ .controls > .controls-radio:nth-child(2),
+.radio:nth-child(3):checked ~ .controls > .controls-radio:nth-child(3),
+.radio:nth-child(4):checked ~ .controls > .controls-radio:nth-child(4) {
+  background-image: url("./assets/img/checked.svg");
+}
+.radio:nth-child(1):checked ~ .controls > .controls-radio:nth-child(1):hover,
+.radio:nth-child(2):checked ~ .controls > .controls-radio:nth-child(2):hover,
+.radio:nth-child(3):checked ~ .controls > .controls-radio:nth-child(3):hover,
+.radio:nth-child(4):checked ~ .controls > .controls-radio:nth-child(4):hover {
+  background-image: url("./assets/img/checked-hover.png");
+}
+
+
+.slider {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  transition: 0.5s;
+}
+.mem-card {
+  width: var(--image-width);
+  margin: 0 20px 10px 20px;
+}
+.image {
+  width: var(--image-width);
+  height: var(--image-height);
+  border-radius: 10px;
+  object-fit: cover;
+}
+.mem-text {
+  width: 50%;
+  color: white;
+  font-size: 15px;
+}
+@media (max-width: 767px) {
+  .slider-wrapper {
+    height: calc(var(--image-height) + 200px);
+  }
+  input.radio:nth-child(2):checked ~ .slider {
+    left: -340px;
+  }
+  input.radio:nth-child(3):checked  ~ .slider {
+    left: -680px;
+  }
+  input.radio:nth-child(4):checked  ~ .slider {
+    left: -1020px;
+  }
+  :root {
+    --image-width: 300px;
+    --image-height: 300px;
+    --controls-size: 30px;
+  }
+  .controls {
+    right: 20%;
+  }
+  .mem-text {
+    width: 100%;
+    margin: 50px auto 0 auto;
+  }
+}
