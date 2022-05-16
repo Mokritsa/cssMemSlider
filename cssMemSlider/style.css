@@ -1,6 +1,6 @@
 
 :root {
-  --image-width: 50vw;
+  --image-width: 35vw;
   --image-height: var(--image-width);
   --controls-size: 5vw;
 }
@@ -106,7 +106,7 @@ input.radio:nth-child(4):checked ~ .slider-controls > .mem-text-wrapper > .mem-d
   width: 100%;
   height: 20vw;
   color: white;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 @media (max-width: 767px) {
   :root {
