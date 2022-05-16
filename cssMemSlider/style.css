@@ -43,6 +43,7 @@ input.radio:nth-child(4):checked  ~ .slider {
 }
 .controls-radio:hover {
   background-image: url("./assets/img/no-checked-hover.svg");
+  cursor: pointer;
 }
 .radio:nth-child(1):checked ~ .slider-controls > .controls > .controls-radio:nth-child(1),
 .radio:nth-child(2):checked ~ .slider-controls > .controls > .controls-radio:nth-child(2),
