@@ -1,8 +1,9 @@
 
 :root {
-  --image-width: 500px;
-  --image-height: 500px;
-  --controls-size: 30px;
+  --image-width: 50vw;
+  --image-height: var(--image-width);
+  --image-margin: 40px;
+  --controls-size: 5vw;
 }
 .html, body {
   background-color: #242424;
@@ -10,8 +11,7 @@
 .slider-wrapper {
   display: flex;
   position: relative;
-  width: calc(var(--image-width) + 40px);
-  height: calc(var(--image-height) + 100px);
+  width: calc(var(--image-width) + var(--image-margin));
   margin: 0 auto;
   overflow: hidden;
   background-color: #242424;
@@ -29,16 +29,16 @@
   z-index: 2;
 }
 input.radio:nth-child(n):checked ~ .slider {
-  left: 0;
+  transform: translateX(0%);
 }
 input.radio:nth-child(2):checked ~ .slider {
-  left: -540px;
+  transform: translateX(-25%);
 }
 input.radio:nth-child(3):checked  ~ .slider {
-  left: -1080px;
+  transform: translateX(-50%);
 }
 input.radio:nth-child(4):checked  ~ .slider {
-  left: -1620px;
+  transform: translateX(-75%);
 }
 /*.slider .mem-card:nth-child(1)>img {
   background-color: red;
@@ -56,7 +56,6 @@ input.radio:nth-child(4):checked  ~ .slider {
   width: var(--controls-size);
   height: var(--controls-size);
   background-image: url("./assets/img/no-checked.svg");
-  margin: 0 10px;
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
@@ -95,12 +94,12 @@ input.radio:nth-child(4):checked  ~ .slider {
   object-fit: cover;
 }
 .mem-text {
-  width: 50%;
+  width: 60%;
   color: white;
-  font-size: 15px;
+  font-size: 2vw;
 }
 @media (max-width: 767px) {
-  .slider-wrapper {
+  /*.slider-wrapper {
     height: calc(var(--image-height) + 200px);
   }
   input.radio:nth-child(2):checked ~ .slider {
@@ -111,17 +110,18 @@ input.radio:nth-child(4):checked  ~ .slider {
   }
   input.radio:nth-child(4):checked  ~ .slider {
     left: -1020px;
-  }
+  }*/
   :root {
-    --image-width: 300px;
-    --image-height: 300px;
-    --controls-size: 30px;
+    --image-width: 80vw;
   }
   .controls {
-    right: 20%;
+    left: 0;
+    transform: translateX(50%) translateX(-10vw);
+    margin: 0 auto;
   }
   .mem-text {
     width: 100%;
-    margin: 50px auto 0 auto;
+    font-size: 4vw;
+    margin: 7vw auto 0 auto;
   }
 }
